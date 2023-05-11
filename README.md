@@ -1,5 +1,5 @@
 # RhodeRunna
-Top Down car game that was created using recursive backtracking and using the JavaFX framework. The user uses WASD to move from the starting point to the ending point and each time they make it to the end a new grid is generated. If the entire vehicle is touching the grass, the Game Over screen will appear and the user can restart by pressing the Start/Restart Button.
+Top Down car game that was created using recursive backtracking, a three by three grid of cells, and the JavaFX framework. The user uses WASD to move from the starting point to the ending point and each time they make it to the end a new grid is generated. If the entire vehicle is touching the grass, the Game Over screen will appear and the user can restart by pressing the Start/Restart Button.
 
 ### Challenges:
 This project was mainly done by me and two of my friends. One of them focused on the main screen and music, the other did car movement, and I did the grid generation and collision. A major challenge was combining the grid generation feature and the car feature at the same time. 

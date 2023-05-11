@@ -6,11 +6,19 @@ This project was mainly done by me and two of my friends. One of them focused on
 
 This was the first time I have worked with the JavaFX framework and JavaScript, it was a little tricky but I see the power of frameworks and why they are essential to game creation. I also now have a much greater appreciation for Unity as I see how many things in the background it manages so that we as programmers do not have to worry about them. 
 
-### Fun/Interesting Parts(To me atleast):
-The whole grid generation I find super interesting as the grid is made up of a 2D ArrayList of type Road. In our program we have 7 Roads that are made with just these three pictures and base 2 connection values where North = 8, South = 4, East = 2, and West = 1:
+### Fun/Interesting Parts (To me atleast):
+The whole grid generation I find super interesting as the grid is made up of a 2D ArrayList of type Road. In our program we have 7 Roads that are made with just these three images and a rotation value:
 ![](https://cdn.discordapp.com/attachments/768196064276119582/1106240333282558013/image.png)
 
-The RoadArray class is a Data Transfer Object. In total we have 7 total roads which covers every possible connection from one direction to another including one for a blank road which is there to show that no roads exist in that cell. Using connection values of base 2 allows no two roads to have the same value.
+The RoadArray class is a Data Transfer Object where we have 7 total roads that cover every possible connection from one direction to another including one for a blank road which is there to show that no roads exist in that cell. Each of the two directions a road connects to is base 2 values where North = 8, South = 4, East = 2, and West = 1. Using connection values of base 2 allows no two roads to have the same value. Ex: If instead we had North = 4, South = 3, East = 2, and West = 1:  The SouthEast Road would be 5 since 3+2=5 and the NorthWest Road would also be 5 since 4+1=5.
+
+This all works brilliantly together since the grid generation process works like this:
+- A random Starting Cell of the 3 by 3 grid is chosen (Can be any cell besided the middle)
+- A starting connection values chosen (N,S,E,W Base 2) 
+- All roads have two connections, if one of those connections is the same value as the starting cell, it can be placed in that location
+- To get our next connection value we simply take the value of our current road, and subtract the starting connection value as this will give us the remaining value
+- Ex: The starting cell is First Column, Second Row, and the connection value is 1 for West.  The three possible Roads are NorthWest(9), SouthWest(5), and EastWest(3). If we randomly select the SouthWest Road our new connection value will be 4 since value of the road (5), minus the value of the west connetion (1) = 5-1 = 4. This represents a South Connection.
+- This process is repeated using backtracking to ensure no impossible grids are generated (Tracks that end in the center, Tracks that create a circle, or tracks that intersect one another)
 
 ![](https://cdn.discordapp.com/attachments/768196064276119582/1106239551170691113/image.png)
 

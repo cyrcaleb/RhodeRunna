@@ -12,6 +12,8 @@ The whole grid generation I find super interesting as the grid is made up of a 2
 
 The RoadArray class is a Data Transfer Object where we have 7 total roads that cover every possible connection from one direction to another including one for a blank road which is there to show that no roads exist in that cell. Each of the two directions a road connects to is a base 2 value where North = 8, South = 4, East = 2, and West = 1. Using connection values of base 2 allows no two roads to have the same value. Ex: If instead we had North = 4, South = 3, East = 2, and West = 1:  The SouthEast Road would be 5 since 3+2=5 and the NorthWest Road would also be 5 since 4+1=5.
 
+![](https://cdn.discordapp.com/attachments/768196064276119582/1106239551170691113/image.png)
+
 This all works brilliantly together since the grid generation process works like this:
 - A random Starting Cell of the 3 by 3 grid is chosen (Can be any cell besided the middle)
 - A starting connection values chosen (N,S,E,W Base 2) 
@@ -20,7 +22,6 @@ This all works brilliantly together since the grid generation process works like
 - Ex: The starting cell is First Column, Second Row, and the connection value is 1 for West.  The three possible Roads are NorthWest(9), SouthWest(5), and EastWest(3). If we randomly select the SouthWest Road our new connection value will be 4 since value of the road (5), minus the value of the west connetion (1) = 5-1 = 4. This represents a South Connection.
 - This process is repeated using backtracking to ensure no impossible grids are generated (Tracks that end in the center, Tracks that create a circle, or tracks that intersect one another)
 
-![](https://cdn.discordapp.com/attachments/768196064276119582/1106239551170691113/image.png)
 
 ## Main Menu
 ![RhodeRunnaMainScreen](https://github.com/cyrcaleb/RhodeRunna/assets/90429575/c8c66acb-2c7c-4fa4-8aff-3c53cca1d355)

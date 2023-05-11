@@ -16,10 +16,10 @@ The RoadArray class is a Data Transfer Object where we have 7 total roads that c
 
 This all works brilliantly together since the grid generation process works like this:
 - A random Starting Cell of the 3 by 3 grid is chosen (Can be any cell besided the middle)
-- A starting connection values chosen (N,S,E,W Base 2) 
+- A starting connection values is chosen (N,S,E,W Base 2) 
 - All roads have two connections, if one of those connections is the same value as the starting cell, it can be placed in that location
 - To get our next connection value we simply take the value of our current road, and subtract the starting connection value as this will give us the remaining value
-- Ex: The starting cell is First Column, Second Row, and the connection value is 1 for West.  The three possible Roads are NorthWest(9), SouthWest(5), and EastWest(3). If we randomly select the SouthWest Road our new connection value will be 4 since value of the road (5), minus the value of the west connetion (1) = 5-1 = 4. This represents a South Connection.
+- Ex: The starting cell is First Column, Second Row, and the connection value is 1 for West.  The three possible Roads are NorthWest(9), SouthWest(5), and EastWest(3). If we randomly select the SouthWest Road our new connection value will be 4 since value of the road (5), minus the value of the West connetion (1) = 5-1 = 4. This represents a new South Connection.
 - This process is repeated using backtracking to ensure no impossible grids are generated (Tracks that end in the center, Tracks that create a circle, or tracks that intersect one another)
 
 

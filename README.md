@@ -7,9 +7,9 @@ This project was mainly done by me and two of my friends. One of them focused on
 This was the first time I have worked with the JavaFX framework and JavaScript, it was a little tricky but I see the power of frameworks and why they are essential to game creation. I also now have a much greater appreciation for Unity as I see how many things in the background it manages so that we as programmers do not have to worry about them. 
 
 ###Fun/Interesting Parts(To me atleast):
-The whole grid generation I find super interesting as the grid is made up of a 2D ArrayList of type Road. The road class 
+The whole grid generation I find super interesting as the grid is made up of a 2D ArrayList of type Road. In our program we have 7 Roads that are made with just three pictures, a 
 
-
+![](https://cdn.discordapp.com/attachments/768196064276119582/1106239551170691113/image.png)
 
 ## Main Menu
 ![RhodeRunnaMainScreen](https://github.com/cyrcaleb/RhodeRunna/assets/90429575/c8c66acb-2c7c-4fa4-8aff-3c53cca1d355)

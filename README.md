@@ -10,7 +10,7 @@ This was the first time I have worked with the JavaFX framework and JavaScript, 
 The whole grid generation I find super interesting as the grid is made up of a 2D ArrayList of type Road. In our program we have 7 Roads that are made with just these three images and a rotation value:
 ![](https://cdn.discordapp.com/attachments/768196064276119582/1106240333282558013/image.png)
 
-The RoadArray class is a Data Transfer Object where we have 7 total roads that cover every possible connection from one direction to another including one for a blank road which is there to show that no roads exist in that cell. Each of the two directions a road connects to is base 2 values where North = 8, South = 4, East = 2, and West = 1. Using connection values of base 2 allows no two roads to have the same value. Ex: If instead we had North = 4, South = 3, East = 2, and West = 1:  The SouthEast Road would be 5 since 3+2=5 and the NorthWest Road would also be 5 since 4+1=5.
+The RoadArray class is a Data Transfer Object where we have 7 total roads that cover every possible connection from one direction to another including one for a blank road which is there to show that no roads exist in that cell. Each of the two directions a road connects to is a base 2 value where North = 8, South = 4, East = 2, and West = 1. Using connection values of base 2 allows no two roads to have the same value. Ex: If instead we had North = 4, South = 3, East = 2, and West = 1:  The SouthEast Road would be 5 since 3+2=5 and the NorthWest Road would also be 5 since 4+1=5.
 
 This all works brilliantly together since the grid generation process works like this:
 - A random Starting Cell of the 3 by 3 grid is chosen (Can be any cell besided the middle)
